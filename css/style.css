@@ -1,0 +1,61 @@
+/*
+RESET
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+GENERAL
+*/
+
+/*
+BACKGROUND
+*/
+.my-background{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.green-background{
+    height: 20%;
+    background-color: #009688;
+}
+.white-background{
+    height: 80%;
+    background-color: #DADBD3;
+}
+
+/*
+MAIN
+*/
+.my-content{
+    width: 1000px;
+    height: 80vh;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+DEBUG
+*/
+
+.debug .col-5,
+.debug .col-7{
+    border: 1px dashed black;
+}
+
+.debug .my-header{
+    height: 20%;
+}
+
+.debug .my-main{
+    height: 80%;
+}
