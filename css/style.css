@@ -12,6 +12,18 @@ RESET
 GENERAL
 */
 
+img{
+    display: inline-block;
+}
+
+.avatar{
+    width: 70px;
+    height: 70px;
+}
+
+.fa-solid{
+    font-size: 1.8em;
+}
 /*
 BACKGROUND
 */
@@ -30,32 +42,61 @@ BACKGROUND
     background-color: #DADBD3;
 }
 
+
 /*
 MAIN
 */
 .my-content{
-    width: 1000px;
-    height: 80vh;
+    width: 80%;
+    height: 90vh;
     margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.my-text-container{
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat;
+}
+
+.alert-background{
+    background-color: #8EDAFC;
+    height: 80px;
+}
+
+.contact-filter{
+    height: 40px;
+}
+
+.contact-list{
+    height: calc(100% - 128px);
+    overflow-y: auto;
 }
 
 /*
 DEBUG
 */
 
-.debug .col-5,
-.debug .col-7{
-    border: 1px dashed black;
-}
 
 .debug .my-header{
-    height: 20%;
+    height: 80px;
+    background-color: #EAEAEA;
+    border: 1px solid black;
 }
 
 .debug .my-main{
-    height: 80%;
+    height: calc(100% - 80px);
+}
+
+.debug .my-text-container{
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.my-navbar{
+    height: 80px;
+    background-color: #F3EEEA;
 }
