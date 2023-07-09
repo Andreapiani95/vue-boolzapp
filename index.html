@@ -43,8 +43,8 @@
                     <!--L'Account con cui stiamo conversando-->
                     <div class="row justify-space-between align-items-center align-middle">
                         <div class="col">
-                            <img class="avatar rounded-circle" :src="contacts[0].avatar" :alt="contacts[0].name">
-                            <span>{{contacts[0].name}}</span>
+                            <img class="avatar rounded-circle" :src="contacts[currentContactIndex].avatar" :alt="contacts[currentContactIndex].name">
+                            <span>{{contacts[currentContactIndex].name}}</span>
                         </div>
                         <div class="col text-end">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -70,7 +70,8 @@
                     
                     <div class="contact-list">
                         <div class="row"
-                        v-for="(contact, index) in contacts">
+                        v-for="(contact, index) in contacts"
+                        @click="changeContact(index)">
                             <div class="col-2 py-2">
                                 <img class="avatar rounded-circle" :src="contacts[index].avatar" alt="contacts[index].name">
                             </div>
@@ -85,99 +86,6 @@
                             </div>
                         </div>
                     </div>
-                        
-                    <!--    
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-
-                        <div class="col-2 py-2">
-                            <img class="avatar rounded-circle" src="img/avatar_1.jpg" alt="">
-                        </div>
-                        <div class="col-8 py-2">
-                            <p>Michele
-                                <br>
-                                Ultimo messaggio inviato
-                            </p>
-                        </div>
-                        <div class="col-2 py-2">
-                            12:00
-                        </div>
-                    -->
 
                 </div>
                 <div class="col-7 my-main px-0">
@@ -185,8 +93,23 @@
                     <!--Una navbar con un form per inoltrare i messaggi-->
                     
                     <div class="my-text-container">
-                        
+                        <div class="row"
+                        v-for="(message, index) in contacts[currentContactIndex].messages">
+                            <div class="col-4"
+                            :class="contacts[currentContactIndex].messages[index].status == 'sent' ? 'offset-md-7' : 'offset-md-1'">
+                                <div class="card rounded-4"
+                                :class="contacts[currentContactIndex].messages[index].status == 'sent' ? 'message-sent' : ''">
+                                    <div class="card-body">
+                                        <p>
+                                            {{contacts[currentContactIndex].messages[index].message}}
+                                        </p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
                     </div>
+
                     <div>
                         <nav class="row my-navbar mx-0">
                         <div class="col-1">

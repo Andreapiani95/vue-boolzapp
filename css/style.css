@@ -77,6 +77,10 @@ MAIN
     overflow-x: hidden;
 }
 
+.message-sent{
+    background-color: #D5F9BA;
+}
+
 /*
 DEBUG
 */
@@ -95,6 +99,7 @@ DEBUG
 .debug .my-text-container{
     height: calc(100% - 80px);
     width: 100%;
+    padding-top: 5%;
 }
 
 .my-navbar{
