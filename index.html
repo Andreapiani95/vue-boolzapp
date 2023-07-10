@@ -66,12 +66,13 @@
                             </p>
                         </div>
                     </div>
-                    <input class="m-1 contact-filter" type="text">
+                    <input class="m-1 contact-filter visible" type="text" v-model="contactFilter">
                     
                     <div class="contact-list">
                         <div class="row"
                         v-for="(contact, index) in contacts"
-                        @click="changeContact(index)">
+                        @click="changeContact(index)"
+                        :class="!contacts[index].name.includes(contactFilter) && contactFilter.length > 0 ? 'filtered-out' : ''">
                             <div class="col-2 py-2">
                                 <img class="avatar rounded-circle" :src="contacts[index].avatar" alt="contacts[index].name">
                             </div>
@@ -103,8 +104,11 @@
                                         <p>
                                             {{contacts[currentContactIndex].messages[index].message}}
                                         </p>
+                                        <p class="fw-light text-end">
+                                            12:00
+                                        </p>
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                         </div>
 
@@ -116,7 +120,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="col-10">
-                            <input type="text">
+                            <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage()" >
                         </div>
                         <div class="col-1">
                             <i class="fa-solid fa-microphone"></i>

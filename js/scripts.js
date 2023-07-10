@@ -167,13 +167,35 @@ createApp({
                         }
                     ],
                 }
-            ]
-
+            ],
+            newMessage: '',
+            contactFilter: '',
         }
     },
     methods: {
         changeContact(index){
             this.currentContactIndex = index;
+        },
+        sendMessage(){
+            const newMessageObject = {
+                date: '12/25/2022 11:50:00',
+                message: this.newMessage,
+                status: 'sent'
+            };
+            this.contacts[this.currentContactIndex].messages.push(
+                newMessageObject
+            );
+
+            setTimeout(() =>{
+                const newMessageReceived = {
+                    date: '12/25/2022 11:50:01',
+                    message: 'Ok!',
+                    status: 'received'
+                }
+                this.contacts[this.currentContactIndex].messages.push(
+                    newMessageReceived
+                )
+            }, 1000);
         }
     }
 }).mount('#app');

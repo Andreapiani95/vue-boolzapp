@@ -81,6 +81,10 @@ MAIN
     background-color: #D5F9BA;
 }
 
+.filtered-out{
+    display: none;
+}
+
 /*
 DEBUG
 */
