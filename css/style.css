@@ -23,6 +23,16 @@ img{
 
 .fa-solid{
     font-size: 1.8em;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.fa-regular{
+    font-size: 1.5em;
+}
+
+input{
+    width: 100%;
 }
 /*
 BACKGROUND
@@ -60,6 +70,8 @@ MAIN
 .my-text-container{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .alert-background{
@@ -75,6 +87,7 @@ MAIN
     height: calc(100% - 128px);
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: #FFFFFF;
 }
 
 .message-sent{
@@ -85,22 +98,17 @@ MAIN
     display: none;
 }
 
-/*
-DEBUG
-*/
-
-
-.debug .my-header{
+.my-header{
     height: 80px;
     background-color: #EAEAEA;
-    border: 1px solid black;
 }
-
-.debug .my-main{
+.my-main{
     height: calc(100% - 80px);
+    background-color: #FFFFFF;
 }
 
-.debug .my-text-container{
+
+.my-text-container{
     height: calc(100% - 80px);
     width: 100%;
     padding-top: 5%;

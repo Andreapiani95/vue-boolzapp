@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Vue Boolzapp</title>
     </head>
-    <body class="debug">
+    <body>
 
         <div id="app" class="container-fluid my-background">
             <div class="green-background">
@@ -42,11 +42,15 @@
                 <div class="col-7 my-header">
                     <!--L'Account con cui stiamo conversando-->
                     <div class="row justify-space-between align-items-center align-middle">
-                        <div class="col">
+                        <div class="col-1">
                             <img class="avatar rounded-circle" :src="contacts[currentContactIndex].avatar" :alt="contacts[currentContactIndex].name">
-                            <span>{{contacts[currentContactIndex].name}}</span>
                         </div>
-                        <div class="col text-end">
+                        <div class="col-8 text-start">
+                            {{contacts[currentContactIndex].name}}
+                            <br>
+                            Ultimo accesso oggi alle 12:00
+                        </div>
+                        <div class="col-3 text-end">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -66,7 +70,7 @@
                             </p>
                         </div>
                     </div>
-                    <input class="m-1 contact-filter visible" type="text" v-model="contactFilter">
+                    <input class="m-1 contact-filter visible" type="text" v-model="contactFilter" placeholder="Cerca o inizia una nuova chat">
                     
                     <div class="contact-list">
                         <div class="row"
@@ -115,16 +119,16 @@
                     </div>
 
                     <div>
-                        <nav class="row my-navbar mx-0">
-                        <div class="col-1">
-                            <i class="fa-regular fa-face-smile"></i>
-                        </div>
-                        <div class="col-10">
-                            <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage()" >
-                        </div>
-                        <div class="col-1">
-                            <i class="fa-solid fa-microphone"></i>
-                        </div>
+                        <nav class="row my-navbar mx-0 align-items-center">
+                            <div class="col-1 text-center">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage()" >
+                            </div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
                         </nav>
                     </div>
                     
