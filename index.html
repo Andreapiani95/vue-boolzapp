@@ -72,7 +72,7 @@
                         <div class="row"
                         v-for="(contact, index) in contacts"
                         @click="changeContact(index)"
-                        :class="!contacts[index].name.includes(contactFilter) && contactFilter.length > 0 ? 'filtered-out' : ''">
+                        :class="!contacts[index].name.toLowerCase().includes(contactFilter.toLowerCase()) && contactFilter.length > 0 ? 'filtered-out' : ''">
                             <div class="col-2 py-2">
                                 <img class="avatar rounded-circle" :src="contacts[index].avatar" alt="contacts[index].name">
                             </div>
